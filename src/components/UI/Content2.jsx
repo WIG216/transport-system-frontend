@@ -12,11 +12,12 @@ export const Content2 = () => {
           >
           </a>
           <h5 className="mb-4 text-4xl font-extrabold leading-none">
-            The quick, brown fox
+            The quick, Way 
+
             <br className="hidden md:block" />
-            jumps over{' '}
+            to Book{' '}
             <span className="inline-block text-deep-purple-accent-400">
-              a lazy dog
+              a Ride with us
             </span>
           </h5>
           <p className="mb-6 text-gray-900">
