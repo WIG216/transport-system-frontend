@@ -6,7 +6,7 @@ export const Feature = (props) => {
         <div className="flex flex-col lg:flex-row">
           <div className="max-w-xl pr-16 mx-auto mb-10">
             <h5 className="mb-6 text-3xl font-extrabold leading-none">
-              The quick, brown fox jumps over a lazy dog
+              Ride With Us
             </h5>
             <p className="mb-6 text-gray-900">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
@@ -39,7 +39,7 @@ export const Feature = (props) => {
                   />
                 </svg>
               </div>
-              <h6 className="mb-2 font-semibold leading-5">The deep ocean</h6>
+              <h6 className="mb-2 font-semibold leading-5">First Step</h6>
               <p className="text-sm text-gray-700">
                 A flower in my garden, a mystery in my panties. Heart attack never
                 stopped old Big Bear. I didn't even know we were calling him Big
@@ -62,7 +62,7 @@ export const Feature = (props) => {
                   />
                 </svg>
               </div>
-              <h6 className="mb-2 font-semibold leading-5">When has justice</h6>
+              <h6 className="mb-2 font-semibold leading-5">Second Step</h6>
               <p className="text-sm text-gray-700">
                 Rough pomfret lemon shark plownose chimaera southern sandfish
                 kokanee northern sea robin Antarctic cod. Yellow-and-black
@@ -85,9 +85,9 @@ export const Feature = (props) => {
                   />
                 </svg>
               </div>
-              <h6 className="mb-2 font-semibold leading-5">Organically grow</h6>
+              <h6 className="mb-2 font-semibold leading-5">Third Step</h6>
               <p className="text-sm text-gray-700">
-                A slice of heaven. O for awesome, this chocka full cuzzie is as
+                Fourth Step. O for awesome, this chocka full cuzzie is as
                 rip-off as a cracker. Meanwhile, in behind the bicycle shed,
                 Hercules.
               </p>
@@ -108,7 +108,7 @@ export const Feature = (props) => {
                   />
                 </svg>
               </div>
-              <h6 className="mb-2 font-semibold leading-5">A slice of heaven</h6>
+              <h6 className="mb-2 font-semibold leading-5">Fourth Step</h6>
               <p className="text-sm text-gray-700">
                 Disrupt inspire and think tank, social entrepreneur but
                 preliminary thinking think tank compelling. Inspiring, invest

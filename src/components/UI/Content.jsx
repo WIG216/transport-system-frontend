@@ -6,13 +6,13 @@ export const Content = () => {
           <div className="flex flex-col justify-center">
             <div className="max-w-xl mb-6">
               <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                The quick, brown fox
+                The quick way to
                 <br className="hidden md:block" />
-                jumps over{' '}
+                Book a {' '}
                 <span className="relative px-1">
                   <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-accent-400" />
                   <span className="relative inline-block text-deep-purple-accent-400">
-                    a lazy dog
+                    Ride With Us
                   </span>
                 </span>
               </h2>
