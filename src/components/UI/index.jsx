@@ -12,5 +12,6 @@ import Footer from "../UI/Footer";
 import Logo from "../UI/Logo";
 import ProductCard from "../UI/ProductCard";
 import CardInfo from "../UI/CardInfo";
+import DriverForm from "../UI/DriverForm";
 
-export { Header, Stats, Content, Features, Product, Teams, Content2, ContactHeader, Form, NavBar, Footer, Logo, ProductCard, CardInfo };
+export { Header, Stats, Content, Features, Product, Teams, Content2, ContactHeader, Form, NavBar, Footer, Logo, ProductCard, CardInfo, DriverForm };
