@@ -1,0 +1,6 @@
+
+.auth-error-text {
+    color: var(--danger);
+    font-size: 11px;
+    margin-bottom: 15px;
+}

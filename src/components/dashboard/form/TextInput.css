@@ -1,0 +1,29 @@
+
+ input {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+
+.input-with-icon-form-group,
+.input-with-link-form-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.input-with-icon-form-group input,
+.input-with-link-form-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  /* background-color: red; */
+}
+
+.input-with-icon-form-group i {
+  padding-left: 1rem;
+  color: var(--primary-color);
+}
