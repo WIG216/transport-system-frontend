@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Home, Cars, Contact, Book, SignupPage, LoginPage, DashboardLanding } from "./pages";
+import { Home, Cars, Contact, Book, SignupPage, LoginPage, DashboardLanding, BookingInfo, Vehicle, Driver } from "./pages";
 import Protected from './components/dashboard/form/Protected';
 
 
@@ -18,7 +18,10 @@ function App() {
             <Route path="/login" element={(<LoginPage />)} />
             <Route path="/register" element={(<SignupPage />)} />
             <Route path="/dashboard" element={( <DashboardLanding  /> )} />
-          </Routes>
+            <Route path="/booking" element={( <BookingInfo  /> )} />
+            <Route path="/vehicle" element={( <Vehicle  /> )} />
+            <Route path="/driver" element={( <Driver  /> )} />
+\          </Routes>
         </BrowserRouter>
       </div>
     </div>

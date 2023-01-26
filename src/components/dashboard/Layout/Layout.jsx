@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { removeToken } from '../../../utils/storage';
 import { useNavigate, NavLink } from "react-router-dom";
 import { MdOutlineContentPaste, MdAssignmentLate, MdAssessment, MdDashboard } from 'react-icons/md';
-import './Layout.css'
 
 function Layout({ title, children }) {
     const navigate = useNavigate();
@@ -42,12 +41,30 @@ function Layout({ title, children }) {
                             </div>
                         </NavLink>
 
-                        <NavLink className="mt-0.5 w-full" to="/tables">
+                        <NavLink className="mt-0.5 w-full" to="/driver">
+                            <div className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
+                                <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Driver</span>
+                            </div>
+                        </NavLink>
+
+                        <NavLink className="mt-0.5 w-full" to="/vehicle">
+                            <div className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
+                                <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Vehicle</span>
+                            </div>
+                        </NavLink>
+
+                        <NavLink className="mt-0.5 w-full" to="/booking">
                             <div className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
                                 <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                     <i className="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
                                 </div>
-                                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Tables</span>
+                                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Booking</span>
                             </div>
                         </NavLink>
 
@@ -84,10 +101,10 @@ function Layout({ title, children }) {
 
                         <NavLink className="mt-0.5 w-full" to="/register">
                             <a onClick={handleLogout} className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
-                                    <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
-                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                    </div>
-                                    <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Logout</span>
+                                <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                </div>
+                                <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Logout</span>
                             </a>
                         </NavLink>
                     </ul>
@@ -117,11 +134,11 @@ function Layout({ title, children }) {
                             {/* <!-- breadcrumb --> */}
                             <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
                                 <li class="text-sm leading-normal">
-                                    <a class="text-white opacity-50">{title}</a>
+                                    <a class="text-white opacity-50">Pages</a>
                                 </li>
-                                <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Dashboard</li>
+                                <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">{title}</li>
                             </ol>
-                            <h6 class="mb-0 font-bold text-white capitalize">Home</h6>
+                            <h6 class="mb-0 font-bold text-white capitalize">{title}</h6>
                         </nav>
 
                         <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
