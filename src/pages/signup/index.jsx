@@ -7,51 +7,54 @@ import FormField from '../../components/dashboard/form/components/FormField/Form
 import Button from '../../components/dashboard/form/components/Button/Button';
 import * as Yup from 'yup';
 import AuthLayout from '../../components/dashboard/form/components/Layout/AuthLayout';
+import ErrorMessage from '../../components/dashboard/form/components/ErrorMessage/ErrorMessage';
 
 import { registerUser } from '../../services/auth';
 import { toast } from 'react-toastify';
 
-const initialValues= {
-    username: '',
+const initialValues = {
+    name: '',
     email: '',
     password: '',
-    confirm_password: ''
+    bdate: '',
+    image: ''
 }
 
 const Index = () => {
     const navigate = useNavigate();
 
     const validationSchema = Yup.object().shape({
-        username: Yup.string().required('Name field is required'),
+        name: Yup.string().required('Name field is required'),
+        bdate: Yup.string().required('Enter a valid age'),
         email: Yup.string().email('Enter a valid email').required('Email field is required'),
         password: Yup.string().min(4, 'Password must be above 4 characters').required('Password Required'),
-        confirm_password: Yup.string().min(4, 'Password must be above 4 characters').required('Confirm Password Required'),
+        image: Yup.string(),
     })
 
-    const handleRegister = (values ) => {
+    const handleRegister = (values) => {
         console.log('VALUES: ', values);
 
-        if(values.password != values.confirm_password) {
-            toast.error("Passwords Must Match", {
-                pauseOnHover: false,
-                closeOnClick: true,
-            })
+        // if(values.password != values.confirm_password) {
+        //     toast.error("Passwords Must Match", {
+        //         pauseOnHover: false,
+        //         closeOnClick: true,
+        //     })
 
-            return;
-        }
+        //     return;
+        // }
 
         registerUser(values).then((res) => {
-            // console.log('REGISTERED USER');
+            console.log('REGISTERED USER');
             // console.log(res);
-            if(res.ok) {
+            if (res.ok) {
                 toast.success("User Registered", {
                     pauseOnHover: false,
                     closeOnClick: true,
-                  })
+                })
                 setTimeout(() => {
                     navigate('/login');
-                },2000)
-            }else {
+                }, 2000)
+            } else {
                 toast.error(res.data.message, {
                     pauseOnHover: false,
                     closeOnClick: true,
@@ -59,7 +62,7 @@ const Index = () => {
             }
         }).catch(err => {
             console.log('ERROR REGISTRATION', err);
-            toast.error("Resgistration Failed", {
+            toast.error("Registration Failed", {
                 pauseOnHover: false,
                 closeOnClick: true,
             })
@@ -68,34 +71,37 @@ const Index = () => {
 
     useEffect(() => {
         console.log('ran')
-    },[]);
+
+    }, []);
 
 
     return (
         <AuthLayout title="Create Account">
             <form action="" className="auth-form">
                 <p>Register</p>
-                <Form 
+                <Form
                     initialValues={initialValues}
                     onSubmit={handleRegister}
                     validationSchema={validationSchema}
                 >
 
-                        <FormField  name="name" type="text" placeholder="Username"/>
+                    <FormField name="name" type="text" placeholder="Username" />
 
-                        <FormField  name="email" type="email" placeholder="Email"/>
+                    <FormField name="email" type="email" placeholder="Email" />
 
-                        <FormField  name="password" type="password" placeholder="Password"/>
+                    <FormField name="password" type="password" placeholder="Password" />
 
-                        <FormField  name="bdate" type="date" placeholder="birth date"/>
+                    <FormField name="bdate" type="date" placeholder="Birth date" />
 
-                        <Button title="Register"/>
-                        </Form>
-                </form>
-                <p className="text-base">
-                    Already have an account? <Link to="/login" className="font-semibold">Sign in</Link>
-                </p>
-            </AuthLayout>
+                    <FormField name="image" type="file" placeholder="Choose image" />
+
+                    <Button title="Register" />
+                </Form>
+            </form>
+            <p className="text-base">
+                Already have an account? <Link to="/login" className="font-semibold">Sign in</Link>
+            </p>
+        </AuthLayout>
 
     );
 }

@@ -17,6 +17,7 @@ function FormField({ name, type = "text", placeholder }) {
                 type={type}
                 name={name}
             />
+            
             <ErrorMessage error={errors[name]} visible={touched[name]} />
         </>
     );
