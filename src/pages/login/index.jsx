@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router";
-import './login.css';
 import Form from '../../components/dashboard/form/components/Form/Form';
 import FormField from '../../components/dashboard/form/components/FormField/FormField';
 import Button from '../../components/dashboard/form/components/Button/Button';
@@ -76,8 +75,8 @@ function Index() {
                     <Button title="Login" />
                 </Form>
             </form>
-            <p className="u-padding-bottom-small label-link">
-                Don't have an account? <Link to="/register" className="text-primary">Sign up</Link>
+            <p className="text-base">
+                Don't have an account? <Link to="/register" className="font-semibold">Sign up</Link>
             </p>
         </AuthLayout>
     );

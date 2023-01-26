@@ -10,8 +10,8 @@ export const Logo = () => {
         };
 
   return (
-    <a href="" onClick={navigatetoHome} class="flex items-center">
-      <span class="self-center text-xl font-semibold whitespace-nowrap text-white">
+    <a href="" onClick={navigatetoHome} className="flex items-center">
+      <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
         Transport.com
       </span>
     </a>

@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import './signup.css';
 import { Link } from 'react-router-dom';
 import Form from '../../components/dashboard/form/components/Form/Form';
 import FormField from '../../components/dashboard/form/components/FormField/FormField';
@@ -93,8 +92,8 @@ const Index = () => {
                         <Button title="Register"/>
                         </Form>
                 </form>
-                <p className="u-padding-bottom-small label-link">
-                    Already have an account? <Link to="/login" className="text-primary">Sign in</Link>
+                <p className="text-base">
+                    Already have an account? <Link to="/login" className="font-semibold">Sign in</Link>
                 </p>
             </AuthLayout>
 

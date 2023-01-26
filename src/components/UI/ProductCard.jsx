@@ -11,19 +11,19 @@ export const ProductCard = (props) => {
 
 
     return (
-        <div class="lg:w-1/3 md:w-1/4 p-6 w-full shadow-lg shadow-slate-300">
-            <a class="block relative h-48 rounded overflow-hidden">
+        <div className="lg:w-1/3 md:w-1/4 p-6 w-full shadow-lg shadow-slate-300">
+            <a className="block relative h-48 rounded overflow-hidden">
               <img
                 alt="ecommerce"
-                class="object-cover object-center w-full h-full block"
+                className="object-cover object-center w-full h-full block"
                 src="https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/bmw-ix-my21-de-launch-1001x565-%281%29.jpg"
               />
             </a>
             <CardInfo />
-            <div class="flex items-center">
+            <div className="flex items-center">
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ export const ProductCard = (props) => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ export const ProductCard = (props) => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +50,7 @@ export const ProductCard = (props) => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-yellow-400"
+                className="w-5 h-5 text-yellow-400"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +59,7 @@ export const ProductCard = (props) => {
               </svg>
               <svg
                 aria-hidden="true"
-                class="w-5 h-5 text-gray-300 dark:text-gray-500"
+                className="w-5 h-5 text-gray-300 dark:text-gray-500"
                 fill="currentColor"
                 viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +70,7 @@ export const ProductCard = (props) => {
             <button
               type="button"
               onClick={navigatetoBook}
-              class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
+              className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
               Book Now
             </button>
           </div>

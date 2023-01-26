@@ -18,3 +18,12 @@ api.addAsyncRequestTransform(async (request) => {
 })
 
 export default api;
+
+// import axios from "axios";
+
+// export default axios.create({
+//   baseURL: "http://localhost:7200",
+//   headers: {
+//     "Content-type": "application/json"
+//   }
+// });
