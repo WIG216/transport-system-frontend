@@ -82,13 +82,13 @@ const Index = () => {
                     validationSchema={validationSchema}
                 >
 
-                        <FormField  name="username" type="text" placeholder="Username"/>
+                        <FormField  name="name" type="text" placeholder="Username"/>
 
                         <FormField  name="email" type="email" placeholder="Email"/>
 
                         <FormField  name="password" type="password" placeholder="Password"/>
 
-                        <FormField  name="confirm_password" type="password" placeholder="Confirm password"/>
+                        <FormField  name="bdate" type="date" placeholder="birth date"/>
 
                         <Button title="Register"/>
                         </Form>

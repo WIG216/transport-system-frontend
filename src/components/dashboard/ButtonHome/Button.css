@@ -1,0 +1,29 @@
+
+.primary-btn {
+  background-color: var(--primary-color);
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.08);
+  color: var(--color-white);
+}
+
+.secondary-btn {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.btn-danger {
+  color: var(--color-white);
+  background-color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  color: var(--primary-color);
+}
+
+.btn-white {
+  color: var(--primary-color);
+  background-color: var(--color-white);
+}

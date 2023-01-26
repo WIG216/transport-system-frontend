@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 import { Navigate } from "react-router";
-import { getToken } from '../../utils/storage';
+import { getToken } from '../../../utils/storage';
 
 const Protected = ({ children }) => {
 
