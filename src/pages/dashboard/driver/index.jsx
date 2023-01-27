@@ -33,7 +33,7 @@ function index() {
                     </div>
                     {/* <Button title="Add"/> */}
                 </div>
-                <table className="w-full text-sm text-left text-gray-500">
+                <table className="w-full text-sm text-left text-gray-500 ">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Author</th>

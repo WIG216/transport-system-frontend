@@ -27,6 +27,7 @@ function Index() {
     })
 
     const handleLogin = (values) => {
+        console.log(values)
         loginUser(values).then((res) => {
             setError(null);
             if (res.ok) {

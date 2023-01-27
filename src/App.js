@@ -3,19 +3,10 @@ import "./App.css";
 import { Home, Cars, Contact, Book, SignupPage, LoginPage, DashboardLanding, BookingInfo, Vehicle, Driver } from "./pages";
 import Protected from './components/dashboard/form/Protected';
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 function App() {
-
-  const [test, setTest] = useState();
-  useEffect(() => {
-    fetch("http://localhost:7200/driver").then(res=>{
-      return res.json();
-    }).then(result=>{
-      console.log(result)
-    })
-  
-  }, [])
   
   return (
     <div className="App">
@@ -29,13 +20,14 @@ function App() {
 
             <Route path="/login" element={(<LoginPage />)} />
             <Route path="/register" element={(<SignupPage />)} />
-            <Route path="/dashboard" element={( <DashboardLanding  /> )} />
-            <Route path="/booking" element={( <BookingInfo  /> )} />
-            <Route path="/vehicle" element={( <Vehicle  /> )} />
-            <Route path="/driver" element={( <Driver  /> )} />
+            <Route path="/dashboard" element={(<DashboardLanding /> )} />
+            <Route path="/booking" element={(<BookingInfo /> )} />
+            <Route path="/vehicle" element={( <Vehicle /> )} />
+            <Route path="/driver" element={( <Driver /> )} />
 \          </Routes>
         </BrowserRouter>
       </div>
+      <ToastContainer />
     </div>
   );
 }

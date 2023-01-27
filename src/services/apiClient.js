@@ -1,7 +1,8 @@
 import  { create } from 'apisauce';
 import { getToken } from '../utils/storage';
+
 const apiUrlTest  = 'http://localhost:7200';
-const  apiUrlLive  =  '';
+// const  apiUrlLive  =  'http://localhost:7200';
 
 const api =  create({
     baseURL: apiUrlTest,
@@ -11,19 +12,10 @@ const api =  create({
     }
 })
 
-api.addAsyncRequestTransform(async (request) => {
+api.addAsyncRequestTransform(async (req) => {
    const authToken = getToken();
    if(!authToken) return;
-   request.headers['x-access-token'] = authToken;
+   req.headers['x-access-token'] = authToken;
 })
 
 export default api;
-
-// import axios from "axios";
-
-// export default axios.create({
-//   baseURL: "http://localhost:7200",
-//   headers: {
-//     "Content-type": "application/json"
-//   }
-// });
