@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import * as Yup from 'yup';
-import { Button } from '../..';
+import  Button  from '../../ButtonHome/Button';
+// import { deleteDriver} from '../../../services/driver';
 
-function DeleteModal({ onAccept, onCancel }) {
+
+function DeleteDriverModal({ onAccept, onCancel }) {
 
     return (
         <div>
@@ -27,4 +29,4 @@ function DeleteModal({ onAccept, onCancel }) {
 
 }
 
-export default DeleteModal;
+export default DeleteDriverModal;

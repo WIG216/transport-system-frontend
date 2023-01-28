@@ -1,26 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import Layout from '../../../components/dashboard/Layout/Layout';
+import {AddDriverModal, DeleteDriverModal} from '../../../components/dashboard/ui/DriverModal/index';
 import Button from '../../../components/dashboard/form/components/Button/Button';
 import Form from '../../../components/dashboard/form/components/Form/Form';
 import FormField from '../../../components/dashboard/form/components/FormField/FormField';
+import { getDriver, deleteDriver } from '../../../services/driver';
+import { toast } from 'react-toastify';
 
 
-function index() {
+
+
+function Index() {
+    const [ showAddModal, setShowAddModal ] = useState(false);
+    const [deleteModal, setShowDeleteModal] = useState(false);
+    const [deleteId, setDeleteId] = useState(null);
+
+    const [drivers, setDrivers] = useState([]);
+
+    const toggleAddModal = () => {
+        setShowAddModal(!showAddModal);
+    }
+
+    const toggleDeleteModal = () => {
+        setShowDeleteModal(!deleteModal);
+    }
+
+    const handleGetDrivers = ()  => {
+
+        getDriver().then((res) => {
+            console.log('RESPONSE GET: ', res);
+            if(res.ok) {
+                setDrivers(res.data.data);
+            }
+        }).catch(err => {
+            console.log('error: ', err);
+        })
+    }
+
+    const handleDeleteClass = () => {
+        console.log('DELETE CLASS');
+        console.log(deleteId)
+        deleteDriver(deleteId).then((res) => {
+            if(res.ok) {
+                toggleDeleteModal();
+                handleGetDrivers();
+                toast.success(res.data.message, {
+                    pauseOnHover: false,
+                    closeOnClick: true,
+                })
+          
+            }else {
+                toast.error(res.data.message, {
+                    pauseOnHover: false,
+                    closeOnClick: true,
+                })
+            }
+        }).catch(err => {
+            toast.error("ERROR", {
+                pauseOnHover: false,
+                closeOnClick: true,
+            })
+        })
+    }
+
+    const handleDriverAdded = ()  => {
+        handleGetDrivers();
+        toggleAddModal();
+    }
+
+    useEffect(() => {
+        handleGetDrivers();
+    },[]);
+
     return (
         <Layout title="Driver">
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
                 <div className="flex items-center justify-between  pb-4 bg-white dark:bg-gray-900 pt-6 px-6">
-                    {/* <Form
-                    // initialValues={initialValues}
-                    // onSubmit={handleSearch}
-                    // validationSchema={validationSchema}
-                >
-
-                    <FormField name="search" type="email" placeholder="Search for driver" />
-
-                    <Button title="Search" />
-                </Form> */}
                     <label for="table-search" className="sr-only">Search</label>
                     <div className="relative ">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
@@ -109,4 +166,4 @@ function index() {
     );
 }
 
-export default index;
+export default Index;

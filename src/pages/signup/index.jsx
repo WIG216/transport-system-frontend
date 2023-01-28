@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
@@ -7,52 +6,37 @@ import FormField from '../../components/dashboard/form/components/FormField/Form
 import Button from '../../components/dashboard/form/components/Button/Button';
 import * as Yup from 'yup';
 import AuthLayout from '../../components/dashboard/form/components/Layout/AuthLayout';
-import ErrorMessage from '../../components/dashboard/form/components/ErrorMessage/ErrorMessage';
 
 import { registerUser } from '../../services/auth';
 import { toast } from 'react-toastify';
 
-
-const initialValues = {
-    name: '',
-    email: 'rrrr',
-    password: '',
-    confirm_password: '',
+const initialValues= {
+    username: '',
     bdate: '',
-    image: ''
+    email: '',
+    password: '',
+    // confirm_password: '',
+    imageUrl: '',
 }
-
-
 
 const Index = () => {
     const navigate = useNavigate();
-    
+
     const validationSchema = Yup.object().shape({
-        name: Yup.string().required('Name field is required'),
-        bdate: Yup.string().required('Enter a valid age'),
+        username: Yup.string().required('Name field is required'),
+        bdate: Yup.string().required('Date field is required'),
         email: Yup.string().email('Enter a valid email').required('Email field is required'),
         password: Yup.string().min(4, 'Password must be above 4 characters').required('Password Required'),
-        confirm_password: Yup.string().min(4, 'Password must be above 4 characters').required('Confirm Password Required'),
-        image: Yup.string(),
+        imageUrl: Yup.string().required("Image is required")
+        // confirm_password: Yup.string().min(4, 'Password must be above 4 characters').required('Confirm Password Required'),
     })
-    
-    // console.log("========================================")
+
     const handleRegister = (values) => {
-        alert()
         console.log('VALUES: ', values);
-
-        if(values.password != values.confirm_password) {
-            toast.error("Passwords Must Match", {
-                pauseOnHover: false,
-                closeOnClick: true,
-            })
-
-            return;
-        }
         
         registerUser(values).then((res) => {
             // console.log('REGISTERED USER');
-            // console.log(res);
+            console.log(res);
             if(res.ok) {
                 toast.success("User Registered", {
                     pauseOnHover: false,
@@ -78,39 +62,38 @@ const Index = () => {
 
     useEffect(() => {
         console.log('ran')
-
-    }, []);
+    },[]);
 
 
     return (
         <AuthLayout title="Create Account">
+            <form action="" className="auth-form">
                 <p>Register</p>
-                <Form
+                <Form 
                     initialValues={initialValues}
                     onSubmit={handleRegister}
                     validationSchema={validationSchema}
                 >
 
-                    <FormField name="name" type="text" placeholder="Username" />
+                        <FormField  name="username" type="text" placeholder="Username"/>
 
-                    <FormField name="email" type="email" placeholder="Email" />
+                        <FormField  name="email" type="email" placeholder="Email"/>
 
+                        <FormField  name="bdate" type="date" placeholder="Date of Birth"/>
 
-                    <FormField name="bdate" type="date" placeholder="Birth date" />
+                        <FormField  name="imageUrl" type="file" placeholder="Image"/>
 
-                    <FormField name="image" type="file" placeholder="Choose image" />
+                        <FormField  name="password" type="password" placeholder="Password"/>
 
-                    <FormField name="password" type="password" placeholder="Password" />
+                        {/* <FormField  name="confirm_password" type="password" placeholder="Confirm password"/> */}
 
-                    <FormField  name="confirm_password" type="password" placeholder="Confirm password"/>
-
-                    <Button title="Register" />
-                </Form>
-            
-            <p className="text-base">
-                Already have an account? <Link to="/login" className="font-semibold">Sign in</Link>
-            </p>
-        </AuthLayout>
+                        <Button title="Register"/>
+                        </Form>
+                </form>
+                <p className="u-padding-bottom-small label-link">
+                    Already have an account? <Link to="/login" className="text-primary">Sign in</Link>
+                </p>
+            </AuthLayout>
 
     );
 }
