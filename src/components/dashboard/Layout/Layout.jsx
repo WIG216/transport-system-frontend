@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { removeToken } from '../../../utils/storage';
 import { useNavigate, NavLink } from "react-router-dom";
 import { MdOutlineContentPaste, MdAssignmentLate, MdAssessment, MdDashboard } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
 function Layout({ title, children }) {
     const navigate = useNavigate();
@@ -10,14 +11,12 @@ function Layout({ title, children }) {
     const handleLogout = () => {
         removeToken();
         navigate('/');
+        toast.success("User Logged out", {
+            pauseOnHover: false,
+            closeOnClick: true,
+          })
     }
 
-    const [showNav, setShowNav] = useState(true);
-    const [showUserMenu, setShowUserMenu] = useState(false);
-
-    const toggleNav = () => {
-        setShowNav(!showNav);
-    }
 
 
     return (
@@ -27,8 +26,8 @@ function Layout({ title, children }) {
                 <div className="h-19">
                     <i className="absolute top-0 right-0 p-4 opacity-50 cursor-pointer fas fa-times dark:text-white text-slate-400 xl:hidden" sidenav-close></i>
                     <NavLink to="/dashboard" className="block px-8 py-6 m-0 text-sm whitespace-nowrap dark:text-white text-slate-700" target="_blank">
-                        <img src={require("../../../assets/images/logo/logo.png")} className="inline transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
-                        <img src={require("../../../assets/images/logo/logo.png")} className="hidden h-full w-full transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
+                        <img src={require("../../../assets/images/logo/logo.png")} className="inline h-[10rem] transition-all duration-200 dark:hidden ease-nav-brand max-h-8" alt="main_logo" />
+                        <img src={require("../../../assets/images/logo/logo.png")} className="hidden transition-all duration-200 dark:inline ease-nav-brand max-h-8" alt="main_logo" />
                         {/* <span className="ml-1 font-semibold transition-all duration-200 ease-nav-brand">Argon Dashboard 2</span> */}
                     </NavLink>
                 </div>
@@ -109,7 +108,7 @@ function Layout({ title, children }) {
 
                 <div className="mx-4">
                     <p className="invisible hidden text-gray-800 text-red-500 text-red-600 text-blue-500 dark:bg-white bg-slate-500 bg-gray-500/30 bg-cyan-500/30 bg-emerald-500/30 bg-orange-500/30 bg-red-500/30 after:bg-gradient-to-tl after:from-zinc-800 after:to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 after:from-blue-700 after:to-cyan-500 after:from-orange-500 after:to-yellow-500 after:from-green-600 after:to-lime-400 after:from-red-600 after:to-orange-600 after:from-slate-600 after:to-slate-300 text-emerald-500 text-cyan-500 text-slate-400"></p>
-                    <div className="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border" sidenav-card>
+                    <div className="relative flex flex-col min-w-0 break-words bg-transparent border-0 shadow-none rounded-2xl bg-clip-border">
                         <img className="w-1/2 mx-auto" src="../assets/img/illustrations/icon-documentation.svg" alt="sidebar illustrations" />
                         <div className="flex-auto w-full p-4 pt-0 text-center">
                             <div className="transition-all duration-200 ease-nav-brand">
@@ -125,7 +124,7 @@ function Layout({ title, children }) {
 
             <main className="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
                 {/* <!-- Navbar --> */}
-                <nav className="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
+                <nav className="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start">
                     <div className="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
                         <nav>
                             {/* <!-- breadcrumb --> */}
@@ -152,7 +151,7 @@ function Layout({ title, children }) {
                                     </a>
                                 </li>
                                 <li className="flex items-center pl-4 xl:hidden px-4">
-                                    <a href="javascript:;" className="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
+                                    <a href="javascript:;" className="block p-0 text-sm text-white transition-all ease-nav-brand">
                                         <div className="w-4.5 overflow-hidden">
                                             <i className="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
                                             <i className="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
@@ -212,8 +211,8 @@ function Layout({ title, children }) {
                                                     <div className="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
                                                         <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                                             <title>credit-card</title>
-                                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                                                <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fillRule="nonzero">
                                                                     <g transform="translate(1716.000000, 291.000000)">
                                                                         <g transform="translate(453.000000, 454.000000)">
                                                                             <path className="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>

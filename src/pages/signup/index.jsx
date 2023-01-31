@@ -9,6 +9,7 @@ import AuthLayout from '../../components/dashboard/form/components/Layout/AuthLa
 
 import { registerUser } from '../../services/auth';
 import { toast } from 'react-toastify';
+import Uploader from '../../components/dashboard/form/components/Uploader/upload';
 
 const initialValues= {
     username: '',

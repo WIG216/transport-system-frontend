@@ -4,6 +4,7 @@ import { Home, Cars, Contact, Book, SignupPage, LoginPage, DashboardLanding, Boo
 import Protected from './components/dashboard/form/Protected';
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -20,10 +21,10 @@ function App() {
 
             <Route path="/login" element={(<LoginPage />)} />
             <Route path="/register" element={(<SignupPage />)} />
-            <Route path="/dashboard" element={(<DashboardLanding /> )} />
-            <Route path="/booking" element={(<BookingInfo /> )} />
-            <Route path="/vehicle" element={( <Vehicle /> )} />
-            <Route path="/driver" element={( <Driver /> )} />
+            <Route path="/dashboard" element={(<Protected><DashboardLanding /> </Protected>)} />
+            <Route path="/booking" element={(<Protected><BookingInfo /></Protected> )} />
+            <Route path="/vehicle" element={( <Protected><Vehicle /> </Protected>)} />
+            <Route path="/driver" element={( <Protected><Driver /> </Protected>)} />
 \          </Routes>
         </BrowserRouter>
       </div>

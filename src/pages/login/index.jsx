@@ -60,8 +60,8 @@ function Index() {
 
     return (
         <AuthLayout title="Welcome Back">
-            <form action="">
-                <p>Login</p>
+            <form action="" className='auth-form'>
+                <p >Login</p>
                 {error && <ErrorMessage error={error} visible={true} />}
                 <Form
                     initialValues={initialValues}

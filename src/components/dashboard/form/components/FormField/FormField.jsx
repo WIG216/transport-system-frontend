@@ -8,7 +8,6 @@ function FormField({ name, type = "text", placeholder }) {
 
     return (
         <>
-            
             <TextInput
                 onBlur={() => setFieldTouched(name)}
                 onChange={(e) => setFieldValue(name, e.target.value)}

@@ -12,10 +12,10 @@ const api =  create({
     }
 })
 
-api.addAsyncRequestTransform(async (req) => {
+api.addAsyncRequestTransform(async (request) => {
    const authToken = getToken();
    if(!authToken) return;
-   req.headers['x-access-token'] = authToken;
+   request.headers['x-access-token'] = authToken;
 })
 
 export default api;
