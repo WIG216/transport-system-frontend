@@ -20,7 +20,23 @@ const getToken = () => {
 
 const getUser = () => {
     const token =  getToken();
+    // console.log('STUDENT DATA: ', jwtDecode(token));
+
     return token ? jwtDecode(token) : null;
+}
+
+const isDriver = () => {
+    const token =  getToken();
+    let user = jwtDecode(token);
+    // console.log('USER IN ISCHECK',  user)
+    return user?.role == 'driver' ? true : false;
+}
+
+const isPassenger = () => {
+    const token =  getToken();
+    let user = jwtDecode(token);
+    // console.log('USER IN ISCHECK',  user)
+    return user?.role == 'passenger' ? true : false;
 }
 
 const removeToken = async ()=> {
@@ -31,4 +47,4 @@ const removeToken = async ()=> {
     }
 }
 
-export { getUser, getToken, removeToken, storeToken}
+export { getUser, getToken, removeToken, storeToken, isDriver, isPassenger }
