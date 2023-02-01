@@ -21,6 +21,7 @@ function App() {
 
             <Route path="/login" element={(<LoginPage />)} />
             <Route path="/register" element={(<SignupPage />)} />
+            <Route path="/register" element={(<SignupPage />)} />
             <Route path="/dashboard" element={(<Protected><DashboardLanding /> </Protected>)} />
             <Route path="/booking" element={(<Protected><BookingInfo /></Protected> )} />
             <Route path="/vehicle" element={( <Protected><Vehicle /> </Protected>)} />
