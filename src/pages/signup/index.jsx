@@ -95,7 +95,7 @@ const Index = () => {
                     Already have an account? <Link to="/login" className="text-primary">Sign in</Link>
                 </p>
                 <p className="u-padding-bottom-small label-link">
-                    Are you a driver? <Link to="/login" className="text-primary">Sign Up </Link>
+                    Are you a driver? <Link to="/register-driver" className="text-primary">Sign Up </Link>
                 </p>
 
             </AuthLayout>

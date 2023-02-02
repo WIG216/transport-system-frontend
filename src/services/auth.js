@@ -8,8 +8,18 @@ const loginUser = (data) => {
     return api.post('/user/login', data);
 }
 
+const registerDriver = (data) => {
+    return api.post('/driver/signup', data);
+}
+
+const loginDriver = (data) => {
+    return api.post('/driver/login', data);
+}
+
 export {
     registerUser,
-    loginUser
+    loginUser,
+    registerDriver,
+    loginDriver
 }
 

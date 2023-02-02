@@ -26,7 +26,7 @@ function Uploader(name) {
                         }
                     }}
                 />
-                    <ErrorMessage error={errors[name]} visible={touched[name]} />
+                    <ErrorMessage error={errors[name]} visible={touched[name]} /> 
 
                 {image ?
                     <img src={image} width={90} height={90} alt={fileName} />

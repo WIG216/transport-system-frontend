@@ -116,7 +116,7 @@ export default function AddVehicleModal() {
                                             <input id="dropzone-file" type="file" class="hidden" />
                                             
                                         </label> */}
-                                        <Uploader name="carImage" />
+                                        {/* <Uploader name="carImage" /> */}
 
                                         {/* <Button title="Create Driver" /> */}
                                         <div className="flex justify-between p-6 border-t border-solid border-slate-200 rounded-b">

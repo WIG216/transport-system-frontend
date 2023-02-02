@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router";
-import Form from '../../components/dashboard/form/components/Form/Form';
-import FormField from '../../components/dashboard/form/components/FormField/FormField';
-import Button from '../../components/dashboard/form/components/Button/Button';
+import Form from '../../../components/dashboard/form/components/Form/Form';
+import FormField from '../../../components/dashboard/form/components/FormField/FormField';
+import Button from '../../../components/dashboard/form/components/Button/Button';
 import * as Yup from 'yup';
-import AuthLayout from '../../components/dashboard/form/components/Layout/AuthLayout';
+import AuthLayout from '../../../components/dashboard/form/components/Layout/AuthLayout';
 import { Link } from 'react-router-dom';
-import ErrorMessage from '../../components/dashboard/form/components/ErrorMessage/ErrorMessage';
-import { loginUser } from '../../services/auth';
-import { storeToken, getToken } from '../../utils/storage';
+import ErrorMessage from '../../../components/dashboard/form/components/ErrorMessage/ErrorMessage';
+import { loginDriver } from '../../../services/auth';
+import { storeToken, getToken } from '../../../utils/storage';
 import { toast } from 'react-toastify';
+
 
 const initialValues = {
     email: '',
@@ -18,6 +19,7 @@ const initialValues = {
 }
 
 function Index() {
+
     const navigate = useNavigate();
 
     const [error, setError] = useState(null);
@@ -28,7 +30,7 @@ function Index() {
 
     const handleLogin = (values) => {
         console.log(values)
-        loginUser(values).then((res) => {
+        loginDriver(values).then((res) => {
             setError(null);
             if (res.ok) {
                 console.log(res);
@@ -61,7 +63,7 @@ function Index() {
     return (
         <AuthLayout title="Welcome Back">
             <form action="" className='auth-form'>
-                <p >Login</p>
+                <p >Login as a Driver</p>
                 {error && <ErrorMessage error={error} visible={true} />}
                 <Form
                     initialValues={initialValues}
@@ -77,7 +79,7 @@ function Index() {
                 </Form>
             </form>
             <p className="text-base">
-                Don't have an account? <Link to="/register" className="font-semibold">Sign up</Link>
+                Don't have an account? <Link to="/register-driver" className="font-semibold">Sign up</Link>
             </p>
         </AuthLayout>
     );

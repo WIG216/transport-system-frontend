@@ -184,12 +184,8 @@ function Index() {
                                 <td className="p-2 align-middle items-center bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                     <div className="flex px-2 py-1">
                                         <div>
-                                            <img src="../assets/img/team-2.jpg" className="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
+                                            <img src={data.driverImage} className="mx-auto items-center text-sm text-white transition-all duration-200 ease-in-out h-9 w-9 rounded-xl" alt="user1" />
                                         </div>
-                                        {/* <div className="flex flex-col justify-center">
-                                            <h6 className="mb-0 text-sm leading-normal dark:text-white">{data.driverName}</h6>
-                                            <p className="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">{data.email}</p>
-                                        </div> */}
                                     </div>
                                 </td>
                                 <td className="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
@@ -197,11 +193,11 @@ function Index() {
                                 </td>
                                 <td className="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                     <p className="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{data.vehicle}</p>
-                                    <p className="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">Organization</p>
+                                    {/* <p className="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">Organization</p> */}
                                 </td>
                                 <td className="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                     <p className="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">{moment(new Date(data.createdAt)).format('MMMM d, YYYY')}</p>
-                                    <p className="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">Organization</p>
+                                    {/* <p className="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">Organization</p> */}
                                 </td>
                                 <td className="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                     <span className="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">{data.status}</span>

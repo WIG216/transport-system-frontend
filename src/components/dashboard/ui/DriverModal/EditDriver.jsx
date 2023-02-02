@@ -29,8 +29,8 @@ function EditDriverModal({ onClose, onDriverAdded }) {
     const validationSchema = Yup.object().shape({
         driverName: Yup.string(),
         bdate: Yup.string(),
-        email: Yup.string().email('Enter a valid email').required('Email field is required'),
-        password: Yup.string().min(4, 'Password must be above 4 characters').required('Password Required'),
+        email: Yup.string().email('Enter a valid email'),
+        password: Yup.string().min(4, 'Password must be above 4 characters'),
         // driverImage: Yup.string().required("Image is required"),
         // status: Yup.string().required
     })
