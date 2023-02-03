@@ -46,14 +46,14 @@ function Layout({ title, children }) {
                             </div>
                         </NavLink>
 
-                        <NavLink className="mt-0.5 w-full" to="/driver">
+                        {/* <NavLink className="mt-0.5 w-full" to="/driver">
                             <div className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
                                 <div className="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                                     <i className="fa-solid fa-user-gear"></i>
                                 </div>
                                 <span className="ml-1 duration-300 opacity-100 pointer-events-none ease">Driver</span>
                             </div>
-                        </NavLink>
+                        </NavLink> */}
 
                         <NavLink className="mt-0.5 w-full" to="/vehicle">
                             <div className=" dark:text-white dark:opacity-80 py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors">
@@ -118,7 +118,7 @@ function Layout({ title, children }) {
                         </div>
                     </div>
                     <a href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/argon-dashboard/" target="_blank" className="inline-block w-full px-8 py-2 mb-4 text-xs font-bold leading-normal text-center text-white capitalize transition-all ease-in rounded-lg shadow-md bg-slate-700 bg-150 hover:shadow-xs hover:-translate-y-px">Documentation</a>
-                    <a className="inline-block w-full px-8 py-2 text-xs font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md select-none bg-150 bg-x-25 hover:shadow-xs hover:-translate-y-px" href="https://www.creative-tim.com/product/argon-dashboard-pro-tailwind?ref=sidebarfree" target="_blank">Upgrade to pro</a>
+                    <a className="inline-block w-full px-8 py-2 text-xs font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md select-none bg-150 bg-x-25 hover:shadow-xs hover:-translate-y-px" href="https://www.creative-tim.com/product/argon-dashboard-pro-tailwind?ref=sidebarfree" target="_blank">Contact Support</a>
                 </div>
             </div>
 

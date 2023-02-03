@@ -62,7 +62,7 @@ function Index() {
     const toggleDeleteModal = () => {
         setShowDeleteModal(!deleteModal);
     }
-    
+
     const toggleEditModal = () => {
         setShowEditModal(!editModal);
     }
@@ -104,7 +104,7 @@ function Index() {
             })
         })
     }
-    
+
     const handleEditDriver = () => {
         console.log('DELETE Driver');
         console.log(updateId)
@@ -143,7 +143,7 @@ function Index() {
     const handleDriverDeleted = () => {
         handleDeleteDriver();
         toggleDeleteModal();
-    }   
+    }
 
     useEffect(() => {
         handleGetDrivers();
@@ -153,16 +153,16 @@ function Index() {
         <Layout title="Driver">
 
             <div className="relative w-[70vw] mx-auto md:mt-10 overflow-x-auto shadow-md sm:rounded-lg ">
-            <div className="flex items-center w-full justify-between  pb-4 bg-white dark:bg-gray-900 pt-6 px-6">
+                <div className="flex items-center w-full justify-between  pb-4 bg-white dark:bg-gray-900 pt-6 px-6">
                     <label for="table-search" className="sr-only">Search</label>
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
-                            <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                            <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg>
                         </div>
                         <input type="text" id="table-search-users" className=" p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-80 bg-gray-50 focus:outline-none focus:ring-0" placeholder="Search for Driver" />
                     </div>
                     <div className="relative">
-                       <button onClick={toggleAddModal} className="btn btn-primary btn-add">Add Classroom  <i className="fas fa-plus"></i></button>
+                        <button onClick={toggleAddModal} className="btn btn-primary btn-add">Add Classroom  <i className="fas fa-plus"></i></button>
                         {/* <a className="inline-block px-5 py-2.5 font-bold leading-normal text-center text-white align-middle transition-all bg-transparent rounded-lg cursor-pointer text-sm ease-in shadow-md bg-150 bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 hover:shadow-xs active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25" href="javascript:;"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Add New Card</a> */}
                     </div>
                     {/* <Button title="Add"/> */}
@@ -170,7 +170,7 @@ function Index() {
                 <table className="w-full text-sm text-center text-gray-500 ">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
-                        {rows.map((row, index) => <th key={index} className={row.name}>{row.label}</th>)}
+                            {rows.map((row, index) => <th key={index} className={row.name}>{row.label}</th>)}
 
                         </tr>
                     </thead>
@@ -179,7 +179,7 @@ function Index() {
                         {drivers.map((data, index) =>
                             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                                 <td className="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
-                                    <span className=" px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none  text-slate-400">{index+1}</span>
+                                    <span className=" px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none  text-slate-400">{index + 1}</span>
                                 </td>
                                 <td className="p-2 align-middle items-center bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
                                     <div className="flex px-2 py-1">
@@ -212,7 +212,7 @@ function Index() {
                                             <button className="see"><FiEdit onClick={() => {
                                                 setUpdateId(data._id);
                                                 toggleEditModal();
-                                                
+
                                             }} size={18} />
                                             </button>
                                         </Tippy>
@@ -222,9 +222,9 @@ function Index() {
                                                 toggleDeleteModal();
                                             }} className="ml-4"><i className="fa-solid fa-trash-can text-red-900"></i>
                                             </button>
-                                        </Tippy>    
-                                    </div>                           
-                                 </td>
+                                        </Tippy>
+                                    </div>
+                                </td>
                             </tr>
                         )}
                     </tbody>
