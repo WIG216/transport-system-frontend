@@ -23,10 +23,10 @@ function App() {
             <Route path="/register" element={(<SignupPage />)} />
             <Route path="/login-driver" element={(<LoginDriver />)} />
             <Route path="/register-driver" element={(<SignupDriver />)} />
-            <Route path="/dashboard" element={(<Protected><DashboardLanding /> </Protected>)} />
-            <Route path="/booking" element={(<Protected><BookingInfo /></Protected> )} />
-            <Route path="/vehicle" element={( <Protected><Vehicle /> </Protected>)} />
-            <Route path="/driver" element={( <Protected><Driver /> </Protected>)} />
+            <Route path="/dashboard" element={(<DashboardLanding /> )} />
+            <Route path="/booking" element={(<BookingInfo /> )} />
+            <Route path="/vehicle" element={( <Vehicle />)} />
+            <Route path="/driver" element={( <Driver />)} />
 \          </Routes>
         </BrowserRouter>
       </div>
@@ -36,3 +36,4 @@ function App() {
 }
 
 export default App;
+//

@@ -17,7 +17,7 @@ import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } f
 
 import { toast } from 'react-toastify';
 
-import { createDriver } from '../../../../services/driver';
+import { createVehicle } from '../../../../services/vehicle';
 
 const initialValues = {
     vehicleName: '',
@@ -88,15 +88,17 @@ function AddDriverModal({ onClose, onDriverAdded }) {
         model: Yup.string().required('Date field is required'),
         NoSeat: Yup.number().required('Number of Seat is required'),
         color: Yup.string().required('Color field is required'),
-        carImage: Yup.string().min(4, 'Password must be above 4 characters').required('Password Required'),
-        // driverImage: Yup.string().required("Image is required"),
-        // status: Yup.string().required
     })
 
     const handleAddDriver = (values) => {
-        console.log('Driver info: ', values);
+        console.log('VALUES: ', values);
 
-        createDriver(values).then((res) => {
+        let data = {
+            ...values,
+            carImage: imageUrl,
+        }
+
+        createVehicle(data).then((res) => {
             if (res.ok) {
                 toast.success(res.message, {
                     pauseOnHover: false,
